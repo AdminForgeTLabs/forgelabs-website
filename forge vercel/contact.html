@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact &mdash; Forge T Labs</title>
+<meta name="description" content="Get in touch with Forge T Labs to start a Microsoft Cloud, Dynamics 365 or AI project." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="forge-styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="forge-t-labs-logo.png" alt="Forge T Labs logo" />
+      <span class="bt"><b>Forge T Labs</b><small>AI CLOUD &middot; ISV PARTNER</small></span>
+    </a>
+    <nav><ul>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="solutions.html">Solutions</a></li>
+      <li><a href="index.html#process">Approach</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul></nav>
+    <a class="nav-cta" href="contact.html">Start a project</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="page-hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</div>
+    <h1>Let's <em>forge</em> something together.</h1>
+    <p class="lede">Tell us about your project &mdash; a Dynamics 365 rollout, a Microsoft 365
+      migration, an Azure or AI build, or interest in our solutions. We'll come back within one
+      business day.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact-grid">
+
+    <!-- FORM -->
+    <div class="form-card reveal">
+      <form id="contactForm" novalidate>
+        <!-- honeypot: hidden from humans, catches bots. Do not remove. -->
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <label>Website<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+            <div class="err">Please enter your name.</div>
+          </div>
+          <div class="field">
+            <label for="email">Work email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            <div class="err">Please enter a valid email address.</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="company">Company <span class="req">*</span></label>
+            <input type="text" id="company" name="company" placeholder="Company name" required />
+            <div class="err">Please enter your company.</div>
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span style="color:var(--ink-faint)">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 555 000 0000" />
+            <div class="err">Please enter a valid phone number.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="interest">What can we help with? <span class="req">*</span></label>
+          <select id="interest" name="interest" required>
+            <option value="" selected disabled>Select an area&hellip;</option>
+            <option>Dynamics 365</option>
+            <option>Modern Work (Microsoft 365)</option>
+            <option>Azure &amp; AI</option>
+            <option>Our Solutions / ISV products</option>
+            <option>Managed Services &amp; support</option>
+            <option>Something else</option>
+          </select>
+          <div class="err">Please choose an area.</div>
+        </div>
+        <div class="field">
+          <label for="message">Project details <span class="req">*</span></label>
+          <textarea id="message" name="message" placeholder="A few lines on what you're trying to achieve, timelines, and anything else useful."  required></textarea>
+          <div class="err">Please tell us a little about your project (at least 10 characters).</div>
+        </div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-primary">Send message &rarr;</button>
+          <span class="note">We reply within one business day. No spam, ever.</span>
+        </div>
+      </form>
+
+      <!-- success state -->
+      <div class="form-success" id="formSuccess">
+        <div class="ok"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#3fc878" stroke-width="2.4">
+          <path d="M5 13l4 4 10-11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Message sent.</h3>
+        <p id="successText">Thanks &mdash; we've received your enquiry and will be in touch within one business day.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:24px">
+          <button class="btn btn-ghost" id="resetForm" type="button">Send another</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO SIDEBAR -->
+    <div class="reveal">
+      <div class="info-card">
+        <h4>Reach us directly</h4>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div><div class="lbl">Email</div>
+            <a class="val" href="mailto:hello@forgetlabs.com">hello@forgetlabs.com</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
+            <path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></div>
+          <div><div class="lbl">Phone</div>
+            <a class="val" href="tel:+15550000000">+1 (555) 000-0000</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
+            <path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <div><div class="lbl">Location</div>
+            <div class="val">[Your address] &mdash; remote across all time zones</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg></div>
+          <div><div class="lbl">Hours</div>
+            <div class="val">Mon&ndash;Fri, 9:00&ndash;17:00 &middot; 24/7 for managed-service clients</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h4>What happens next</h4>
+        <p style="color:var(--ink-dim);font-size:.93rem">
+          We review your message, match you with the right engineer, and set up a short discovery
+          call. From there we scope the work and share a clear plan &mdash; no obligation.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="forge-t-labs-logo.png" alt="Forge T Labs" />
+        <p>AI Cloud Solutions &amp; Microsoft ISV partner &mdash; engineering business applications,
+          modern workplaces and AI on the Microsoft Cloud.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="index.html#services">Dynamics 365</a>
+        <a href="index.html#services">Modern Work</a>
+        <a href="index.html#services">Azure &amp; AI</a>
+        <a href="index.html#services">Managed Services</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="solutions.html">Our Solutions</a>
+        <a href="index.html#process">Our Approach</a>
+        <a href="index.html#about">Why Forge T Labs</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get in touch</h5>
+        <a href="mailto:hello@forgetlabs.com">hello@forgetlabs.com</a>
+        <a href="contact.html">Book a call</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>&copy; 2026 Forge T Labs. All rights reserved.</span>
+      <span>Microsoft &middot; Dynamics 365 &middot; Azure &middot; Microsoft 365</span>
+    </div>
+  </div>
+</footer>
+
+<script src="forge.js"></script>
+<script>
+/* ------------------------------------------------------------------
+   Contact form: client-side validation + POST to /api/contact.
+   The serverless function (api/contact.js) forwards the submission to
+   a Power Automate flow, which creates a Lead in Dynamics 365.
+   See VERCEL-HANDOFF.md for setup.
+   ------------------------------------------------------------------ */
+(function(){
+  var form = document.getElementById('contactForm');
+  if(!form) return;
+  var success = document.getElementById('formSuccess');
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function fieldEl(input){ return input.closest('.field'); }
+
+  function validateField(input){
+    var v = input.value.trim(), ok = true;
+    if(input.id === 'email')        ok = emailRe.test(v);
+    else if(input.id === 'phone')   ok = v === '' || /^[0-9 ()+\-]{6,}$/.test(v);
+    else if(input.id === 'message') ok = v.length >= 10;
+    else if(input.hasAttribute('required')) ok = v !== '';
+    fieldEl(input).classList.toggle('invalid', !ok);
+    return ok;
+  }
+
+  form.querySelectorAll('input,select,textarea').forEach(function(el){
+    if(el.id === 'website') return; // skip honeypot
+    el.addEventListener('blur', function(){ validateField(el); });
+    el.addEventListener('input', function(){
+      if(fieldEl(el).classList.contains('invalid')) validateField(el);
+    });
+  });
+
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fields = form.querySelectorAll('input,select,textarea');
+    var allOk = true, firstBad = null;
+    fields.forEach(function(el){
+      if(el.id === 'website') return;
+      if(!validateField(el)){ allOk = false; if(!firstBad) firstBad = el; }
+    });
+    if(!allOk){ firstBad && firstBad.focus(); return; }
+
+    var get = function(id){ var n=document.getElementById(id); return n ? n.value.trim() : ''; };
+    var payload = {
+      name: get('name'), email: get('email'), company: get('company'),
+      phone: get('phone'), interest: get('interest'), message: get('message'),
+      website: get('website') // honeypot — should be empty
+    };
+
+    submitBtn.disabled = true;
+    var originalLabel = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Sending&hellip;';
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+    .then(function(r){ return r.json().then(function(d){ return { ok:r.ok, data:d }; }); })
+    .then(function(res){
+      if(!res.ok || !res.data.ok){
+        throw new Error((res.data && res.data.error) || 'Submission failed');
+      }
+      document.getElementById('successText').textContent =
+        'Thanks, ' + payload.name.split(' ')[0]
+        + " — we've received your enquiry and will be in touch at "
+        + payload.email + ' within one business day.';
+      form.style.display = 'none';
+      success.classList.add('show');
+      success.scrollIntoView({behavior:'smooth', block:'center'});
+    })
+    .catch(function(err){
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalLabel;
+      var note = form.querySelector('.form-foot .note');
+      if(note){
+        note.textContent = 'Something went wrong sending your message. Please try again, or email hello@forgetlabs.com directly.';
+        note.style.color = 'var(--danger)';
+      }
+      console.error('contact submit error:', err);
+    });
+  });
+
+  document.getElementById('resetForm').addEventListener('click', function(){
+    form.reset();
+    form.querySelectorAll('.invalid').forEach(function(f){ f.classList.remove('invalid'); });
+    success.classList.remove('show');
+    form.style.display = '';
+    submitBtn.disabled = false;
+    var note = form.querySelector('.form-foot .note');
+    if(note){
+      note.textContent = 'We reply within one business day. No spam, ever.';
+      note.style.color = '';
+    }
+    form.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+})();
+</script>
+</body>
+</html>
