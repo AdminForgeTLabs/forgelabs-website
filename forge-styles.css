@@ -281,3 +281,32 @@ footer{border-top:1px solid var(--line-soft);padding:64px 0 38px;background:var(
   .cta-band,.form-card{padding:38px 22px}
   .foot-base{flex-direction:column}
 }
+
+/* ---------- PRODUCT GRID (solutions page) ---------- */
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.product{background:var(--surface-1);border:1px solid var(--line-soft);border-radius:18px;
+  padding:34px 32px;position:relative;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .25s,border-color .25s}
+.product::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;
+  background:linear-gradient(90deg,var(--teal),var(--lime));transform:scaleX(0);
+  transform-origin:left;transition:transform .32s}
+.product:hover{transform:translateY(-6px);border-color:var(--line)}
+.product:hover::after{transform:scaleX(1)}
+.product .phead{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.product .picon{width:46px;height:46px;border-radius:11px;flex:none;
+  background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center}
+.product .picon svg{width:23px;height:23px}
+.product .stage{font-family:"IBM Plex Mono";font-size:.64rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-faint)}
+.product h3{font-family:"Playfair Display";font-weight:800;font-size:1.6rem;line-height:1.1}
+.product .ptag{color:var(--lime);font-size:.96rem;margin:10px 0 12px;font-weight:500}
+.product .pdesc{color:var(--ink-dim);font-size:.95rem}
+.product ul{list-style:none;margin:20px 0 24px;display:flex;flex-direction:column;gap:9px}
+.product li{font-size:.88rem;color:var(--ink-dim);display:flex;gap:10px;align-items:flex-start}
+.product li svg{width:15px;height:15px;flex:none;margin-top:3px}
+.product .pfor{font-family:"IBM Plex Mono";font-size:.72rem;color:var(--ink-faint);
+  border-top:1px solid var(--line-soft);padding-top:16px;margin-bottom:18px}
+.product .pfor b{color:var(--ink-dim);font-weight:500}
+.product .btn{margin-top:auto;width:100%;justify-content:center}
+
+@media(max-width:880px){ .product-grid{grid-template-columns:1fr} }

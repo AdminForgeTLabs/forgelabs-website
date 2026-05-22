@@ -79,11 +79,18 @@
           <label for="interest">What can we help with? <span class="req">*</span></label>
           <select id="interest" name="interest" required>
             <option value="" selected disabled>Select an area&hellip;</option>
-            <option>Dynamics 365</option>
-            <option>Modern Work (Microsoft 365)</option>
-            <option>Azure &amp; AI</option>
-            <option>Our Solutions / ISV products</option>
-            <option>Managed Services &amp; support</option>
+            <optgroup label="Our Products">
+              <option>BuildForge &mdash; Construction Project Management</option>
+              <option>SiteForge &mdash; Property Operations</option>
+              <option>SpecForge &mdash; Workplace Design &amp; Fit-Out</option>
+              <option>AssetForge &mdash; CRE Portfolio Tracking</option>
+            </optgroup>
+            <optgroup label="Services">
+              <option>Dynamics 365</option>
+              <option>Modern Work (Microsoft 365)</option>
+              <option>Azure &amp; AI</option>
+              <option>Managed Services &amp; support</option>
+            </optgroup>
             <option>Something else</option>
           </select>
           <div class="err">Please choose an area.</div>
@@ -119,25 +126,19 @@
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
             <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
           <div><div class="lbl">Email</div>
-            <a class="val" href="mailto:hello@forgetlabs.com">hello@forgetlabs.com</a></div>
-        </div>
-        <div class="info-row">
-          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
-            <path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></div>
-          <div><div class="lbl">Phone</div>
-            <a class="val" href="tel:+15550000000">+1 (555) 000-0000</a></div>
+            <a class="val" href="mailto:cssupport@forgetlabs.com">cssupport@forgetlabs.com</a></div>
         </div>
         <div class="info-row">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
             <path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
-          <div><div class="lbl">Location</div>
-            <div class="val">[Your address] &mdash; remote across all time zones</div></div>
+          <div><div class="lbl">Where we work</div>
+            <div class="val">Remote-first &mdash; we work with clients across all time zones</div></div>
         </div>
         <div class="info-row">
           <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
             <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg></div>
           <div><div class="lbl">Hours</div>
-            <div class="val">Mon&ndash;Fri, 9:00&ndash;17:00 &middot; 24/7 for managed-service clients</div></div>
+            <div class="val">Mon&ndash;Fri, 6:00am&ndash;6:00pm</div></div>
         </div>
       </div>
       <div class="info-card">
@@ -176,7 +177,7 @@
       </div>
       <div class="foot-col">
         <h5>Get in touch</h5>
-        <a href="mailto:hello@forgetlabs.com">hello@forgetlabs.com</a>
+        <a href="mailto:cssupport@forgetlabs.com">cssupport@forgetlabs.com</a>
         <a href="contact.html">Book a call</a>
         <a href="#">LinkedIn</a>
       </div>
@@ -203,6 +204,22 @@
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function fieldEl(input){ return input.closest('.field'); }
+
+  /* Pre-select a product when arriving from a Solutions-page link,
+     e.g. contact.html?product=BuildForge — matches the start of an
+     <option> so short keys map to the full product label. */
+  (function preselectProduct(){
+    var key = new URLSearchParams(window.location.search).get('product');
+    if(!key) return;
+    var select = document.getElementById('interest');
+    var k = key.trim().toLowerCase();
+    for(var i = 0; i < select.options.length; i++){
+      if(select.options[i].text.toLowerCase().indexOf(k) === 0){
+        select.selectedIndex = i;
+        break;
+      }
+    }
+  })();
 
   function validateField(input){
     var v = input.value.trim(), ok = true;
@@ -268,7 +285,7 @@
       submitBtn.innerHTML = originalLabel;
       var note = form.querySelector('.form-foot .note');
       if(note){
-        note.textContent = 'Something went wrong sending your message. Please try again, or email hello@forgetlabs.com directly.';
+        note.textContent = 'Something went wrong sending your message. Please try again, or email cssupport@forgetlabs.com directly.';
         note.style.color = 'var(--danger)';
       }
       console.error('contact submit error:', err);
