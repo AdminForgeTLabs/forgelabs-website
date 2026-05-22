@@ -169,6 +169,31 @@ h2 em{font-style:italic;color:var(--lime)}
 .step .sn{font-family:"IBM Plex Mono";color:var(--green);font-size:.77rem;letter-spacing:.1em}
 .step h4{font-family:"Playfair Display";font-weight:700;font-size:1.34rem;margin:14px 0 9px}
 .step p{color:var(--ink-dim);font-size:.92rem}
+/* ---------- PRODUCT GRID (solutions page) ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.product {
+  background: var(--surface-1);
+  border: 1px solid var(--line-soft);
+  border-radius: 18px;
+  padding: 34px 30px;
+  position: relative;
+  transition: transform .25s, border-color .25s;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  border-color: var(--line);
+}
+
+@media(max-width:960px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
 
 /* ---------- STATS ---------- */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
