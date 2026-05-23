@@ -335,3 +335,75 @@ footer{border-top:1px solid var(--line-soft);padding:64px 0 38px;background:var(
 .product .btn{margin-top:auto;width:100%;justify-content:center}
 
 @media(max-width:880px){ .product-grid{grid-template-columns:1fr} }
+/* ===== PRODUCT GRID (solutions page) ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.product {
+  background: var(--surface-1);
+  border: 1px solid var(--line-soft);
+  border-radius: 18px;
+  padding: 34px 30px;
+  position: relative;
+  transition: transform .25s, border-color .25s;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  border-color: var(--line);
+}
+
+.phead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.picon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.picon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.ptag {
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--brand);
+  margin-bottom: 8px;
+}
+
+.pdesc {
+  color: var(--muted);
+  margin-bottom: 18px;
+  line-height: 1.65;
+}
+
+.pfor {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+.pfor span {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
