@@ -407,3 +407,101 @@ footer{border-top:1px solid var(--line-soft);padding:64px 0 38px;background:var(
 @media (max-width: 960px) {
   .product-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== SERVICE / CAPABILITY CARDS (custom-solutions + service pages) ===== */
+.svc-cap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.cap {
+  background: var(--surface-1);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: transform .25s, border-color .25s;
+}
+
+.cap:hover {
+  transform: translateY(-4px);
+  border-color: var(--line);
+}
+
+.cap .ic {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.cap .ic svg {
+  width: 28px;
+  height: 28px;
+}
+
+.cap h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cap p {
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+/* svc-split: text left, caps right */
+.svc-split {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.svc-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* row items (numbered steps etc) */
+.row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.row .n {
+  font-size: .8rem;
+  color: var(--brand);
+  font-weight: 700;
+  letter-spacing: .08em;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* svc-aside sidebar */
+.svc-aside {
+  background: var(--surface-1);
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+@media (max-width: 960px) {
+  .svc-cap  { grid-template-columns: repeat(2, 1fr); }
+  .svc-split { grid-template-columns: 1fr; gap: 32px; }
+  .svc-list  { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .svc-cap { grid-template-columns: 1fr; }
+}
