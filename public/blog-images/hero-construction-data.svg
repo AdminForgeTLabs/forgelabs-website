@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480">
+<defs>
+  <radialGradient id="glowh1" cx="50%" cy="35%" r="65%">
+    <stop offset="0%" stop-color="#3fc878" stop-opacity="0.20"/>
+    <stop offset="55%" stop-color="#2ba88a" stop-opacity="0.05"/>
+    <stop offset="100%" stop-color="#080a08" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="acch1" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" stop-color="#2ba88a"/>
+    <stop offset="100%" stop-color="#9bdc5a"/>
+  </linearGradient>
+  <pattern id="gridh1" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M40 0H0V40" fill="none" stroke="#2c352c" stroke-width="1" opacity="0.4"/>
+  </pattern>
+</defs>
+<rect width="1200" height="480" fill="#080a08"/>
+<rect width="1200" height="480" fill="url(#gridh1)"/>
+<rect width="1200" height="480" fill="url(#glowh1)"/>
+<rect x="0" y="0" width="1200" height="4" fill="url(#acch1)"/>
+<g transform="translate(820,80)" opacity="0.92">
+  <!-- scattered (left) -->
+  <g fill="none" stroke="#6a736a" stroke-width="2">
+    <rect x="0" y="20" width="54" height="40" rx="6"/>
+    <rect x="14" y="100" width="54" height="40" rx="6"/>
+    <rect x="0" y="180" width="54" height="40" rx="6"/>
+    <rect x="20" y="260" width="54" height="40" rx="6"/>
+  </g>
+  <!-- converging lines -->
+  <g fill="none" stroke="#2ba88a" stroke-width="2" opacity="0.8">
+    <path d="M54 40 C140 50 180 150 250 160"/>
+    <path d="M68 120 C150 124 190 152 250 160"/>
+    <path d="M54 200 C150 196 190 168 250 160"/>
+    <path d="M74 280 C150 268 190 172 250 160"/>
+  </g>
+  <!-- unified core (right) -->
+  <rect x="250" y="120" width="86" height="86" rx="14" fill="#1c231c" stroke="#3fc878" stroke-width="2.5"/>
+  <circle cx="293" cy="163" r="20" fill="none" stroke="#9bdc5a" stroke-width="2.5"/>
+  <circle cx="293" cy="163" r="6" fill="#3fc878"/>
+</g>
+<text x="64" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="3" fill="#3fc878">CONSTRUCTION  ·  DATA</text>
+<text x="62" y="232" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="#eef1ea">Your software isn't</text>
+<text x="62" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="800" fill="#eef1ea">the problem.</text>
+<g transform="translate(64,360)">
+  <circle cx="6" cy="-5" r="6" fill="#3fc878"/>
+  <text x="22" y="0" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#9aa39a">FORGE T LABS</text>
+</g>
+</svg>

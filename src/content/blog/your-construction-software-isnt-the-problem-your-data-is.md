@@ -8,6 +8,7 @@ tags:
   - construction
   - dynamics-365
   - data
+ogImage: /blog-images/hero-construction-data.svg
 ---
 Every commercial contractor has had this conversation. A project goes sideways, the margin erodes, a change order slips, nobody saw it coming until it was too late, and the verdict is the same: our software isn't good enough. We need a better system.
 
