@@ -6,7 +6,9 @@ description: Commercial real estate runs on critical dates. When they live in a
 publishDate: 2026-05-25
 author: Forge T Labs
 tags:
-  - real-estateportfolioasset-management
+  - real-estate
+  - portfolio
+  - asset-management
 ---
 Ask a commercial real estate owner what their biggest risk is and they will talk about vacancy, interest rates, or a softening market. All real. All largely outside their control.
 
