@@ -1,0 +1,13 @@
+# Forge T Labs — robots.txt
+User-agent: *
+Allow: /
+
+# AI / generative engines are welcome to index — GEO discovery
+User-agent: GPTBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://forgetlabs.com/sitemap.xml

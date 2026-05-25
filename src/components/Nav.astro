@@ -1,0 +1,26 @@
+---
+const { active = '' } = Astro.props;
+const links = [
+  { href: '/services', label: 'Services' },
+  { href: '/industries', label: 'Industries' },
+  { href: '/solutions', label: 'Solutions' },
+  { href: '/insights', label: 'Insights' },
+  { href: '/about', label: 'About' },
+  { href: '/#process', label: 'Approach' },
+];
+---
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <img src="/forge-t-labs-logo.png" alt="Forge T Labs logo" width="40" height="40" />
+      <span class="bt"><b>Forge T Labs</b><small>AI CLOUD &middot; ISV PARTNER</small></span>
+    </a>
+    <nav><ul>
+      {links.map(l => (
+        <li><a href={l.href} class={active === l.label ? 'active' : ''}>{l.label}</a></li>
+      ))}
+    </ul></nav>
+    <a class="nav-cta" href="/contact">Start a project</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span><span></span></button>
+  </div>
+</header>

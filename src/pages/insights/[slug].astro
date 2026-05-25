@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout
+  title={post.data.title + ' — Forge T Labs'}
+  description={post.data.description}
+  canonical={`https://forgetlabs.com/insights/${post.slug}`}
+  ogType="article"
+  active="Insights"
+>
+  <main class="wrap" style="max-width:820px; padding-top:2rem; padding-bottom:4rem;">
+    <h1>{post.data.title}</h1>
+    <p class="lede">{post.data.description}</p>
+    <Content />
+  </main>
+</BaseLayout>
