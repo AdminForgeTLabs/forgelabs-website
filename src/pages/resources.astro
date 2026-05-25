@@ -1,87 +1,137 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
 <BaseLayout
   title="Resources — Forge T Labs"
-  description="Download the free Forge T Labs guide: Dynamics 365 for Construction."
+  description="Download the Dynamics 365 for Construction guide and other resources from Forge T Labs."
   canonical="https://forgetlabs.com/resources"
-  ogType="website"
-  
+  active=""
 >
-<main id="top">
-<section class="page-hero">
-  <div class="hero-glow"></div>
-  <div class="wrap">
-    <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; Resources</div>
-    <h1>Free <em>resources</em>.</h1>
-    <p class="lede">Practical guides for teams adopting the Microsoft Cloud. Tell us where to send
-      it and the download is yours.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap contact-grid">
-    <div class="reveal">
-      <span class="mono" style="color:var(--green);display:block;margin-bottom:14px">The guide</span>
-      <h2 style="font-family:'Playfair Display';font-weight:700;font-size:2rem;margin-bottom:14px">
-        Dynamics 365 for Construction</h2>
-      <p style="color:var(--ink-dim);margin-bottom:16px">A practical guide for commercial
-        contractors evaluating Microsoft Dynamics 365 &mdash; what it covers, where it fits, the
-        construction workflows that matter, and how to sequence a rollout.</p>
-      <div class="isv-feat">
-        <div><span class="k">FOR</span><span class="v">Commercial general contractors and construction leadership.</span></div>
-        <div><span class="k">COVERS</span><span class="v">Bid pipeline, project financials, RFIs, change orders, field operations.</span></div>
-        <div><span class="k">FORMAT</span><span class="v">PDF guide &mdash; sent to your inbox, no sales call required.</span></div>
+<main>
+  <section class="hero alt">
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1>Resources</h1>
+        <p class="subtitle">Practical guides and tools to help you modernise your construction business.</p>
       </div>
-      <p style="color:var(--ink-faint);font-size:.85rem;margin-top:22px;font-family:'IBM Plex Mono'">
-        &#8627; Your details are used to send the guide and follow up once. We do not share them.</p>
     </div>
+  </section>
 
-    <div class="form-card reveal">
-      <form id="resourceForm" novalidate>
-        <div style="position:absolute;left:-9999px" aria-hidden="true">
-          <label>Website<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" /></label>
-        </div>
-        <div class="field">
-          <label for="name">Full name <span class="req">*</span></label>
-          <input type="text" id="name" name="name" placeholder="Jane Doe" required />
-          <div class="err">Please enter your name.</div>
-        </div>
-        <div class="field">
-          <label for="email">Work email <span class="req">*</span></label>
-          <input type="email" id="email" name="email" placeholder="jane@company.com" required />
-          <div class="err">Please enter a valid email address.</div>
-        </div>
-        <div class="field">
-          <label for="company">Company <span class="req">*</span></label>
-          <input type="text" id="company" name="company" placeholder="Company name" required />
-          <div class="err">Please enter your company.</div>
-        </div>
-        <div class="field">
-          <label for="role">Your role <span style="color:var(--ink-faint)">(optional)</span></label>
-          <input type="text" id="role" name="role" placeholder="e.g. Operations Director" />
-        </div>
-        <div class="form-foot">
-          <button type="submit" class="btn btn-primary">Send me the guide &rarr;</button>
-          <span class="note">Instant download. We follow up once, then leave you be.</span>
-        </div>
-      </form>
-      <div class="form-success" id="formSuccess">
-        <div class="ok"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#3fc878" stroke-width="2.4">
-          <path d="M5 13l4 4 10-11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Your guide is ready.</h3>
-        <p id="successText">Thanks &mdash; click below to download. We have also emailed you a copy.</p>
-        <div class="hero-actions" style="justify-content:center;margin-top:24px">
+  <section class="section">
+    <div class="container narrow">
+
+      <div id="resourceFormWrap" class="card" style="padding:48px 40px;max-width:600px;margin:0 auto;">
+        <h2 style="margin-bottom:8px;">Dynamics 365 for Construction</h2>
+        <p style="margin-bottom:28px;color:var(--text-muted);">Fill in your details to download the free guide.</p>
+
+        <form id="resourceForm" novalidate>
+          <input type="text" name="website" id="website" style="display:none;" tabindex="-1" autocomplete="off">
+
+          <div class="form-group">
+            <label for="res-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="res-name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="res-email">Work Email <span class="req">*</span></label>
+            <input type="email" id="res-email" name="email" placeholder="jane@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="res-company">Company</label>
+            <input type="text" id="res-company" name="company" placeholder="Acme Construction">
+          </div>
+          <div class="form-group">
+            <label for="res-role">Your Role</label>
+            <input type="text" id="res-role" name="role" placeholder="e.g. Project Manager">
+          </div>
+
+          <div class="form-foot">
+            <button type="submit" class="btn btn-primary" id="resSubmitBtn">Get the Free Guide &rarr;</button>
+            <p class="note" style="margin-top:12px;font-size:0.85rem;color:var(--text-muted);"></p>
+          </div>
+        </form>
+      </div>
+
+      <div id="formSuccess" class="card reveal" style="display:none;padding:48px 40px;max-width:600px;margin:0 auto;text-align:center;">
+        <div style="font-size:3rem;margin-bottom:16px;">&#127881;</div>
+        <h2 style="margin-bottom:12px;">You're all set!</h2>
+        <p id="successText" style="margin-bottom:28px;color:var(--text-muted);">Thanks &mdash; we have also emailed you a copy.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:24px;">
           <a class="btn btn-primary" id="downloadLink" href="/Dynamics-365-for-Construction-Guide.pdf" download>Download the guide &rarr;</a>
         </div>
       </div>
+
     </div>
-  </div>
-</section>
+  </section>
 </main>
 
 <script is:inline>
+(function(){
+  var form = document.getElementById('resourceForm');
+  if(!form) return;
+  var success = document.getElementById('formSuccess');
+  var wrap    = document.getElementById('resourceFormWrap');
 
+  // Basic email regex
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Inline validation styling
+  form.querySelectorAll('input').forEach(function(el){
+    el.addEventListener('blur', function(){
+      if(el.id==='website') return;
+      var ok = true;
+      if(el.required && !el.value.trim()) ok = false;
+      if(el.id==='res-email' && el.value.trim() && !emailRe.test(el.value.trim())) ok = false;
+      el.style.borderColor = ok ? '' : 'var(--danger, #e53e3e)';
+    });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    // Honeypot check
+    if(form.querySelector('#website') && form.querySelector('#website').value) return;
+
+    // Validate
+    var valid = true;
+    form.querySelectorAll('input').forEach(function(el){
+      if(el.id==='website') return;
+      if(el.required && !el.value.trim()){ el.style.borderColor='var(--danger,#e53e3e)'; valid=false; }
+      if(el.id==='res-email' && el.value.trim() && !emailRe.test(el.value.trim())){ el.style.borderColor='var(--danger,#e53e3e)'; valid=false; }
+    });
+    if(!valid) return;
+
+    var btn = form.querySelector('button[type="submit"]');
+    var lbl = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = 'Sending&hellip;';
+
+    var payload = {
+      name:    form.querySelector('#res-name').value.trim(),
+      email:   form.querySelector('#res-email').value.trim(),
+      company: form.querySelector('#res-company') ? form.querySelector('#res-company').value.trim() : '',
+      role:    form.querySelector('#res-role') ? form.querySelector('#res-role').value.trim() : '',
+      source:  'resources-guide'
+    };
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      // Hide form, show success
+      wrap.style.display = 'none';
+      success.style.display = 'block';
+      success.scrollIntoView({behavior:'smooth', block:'center'});
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.innerHTML = lbl;
+      var n = form.querySelector('.form-foot .note');
+      if(n){ n.textContent = 'Something went wrong. Please try again, or email cssupport@forgetlabs.com.'; n.style.color='var(--danger,#e53e3e)'; }
+    });
+  });
+})();
 </script>
 </BaseLayout>
