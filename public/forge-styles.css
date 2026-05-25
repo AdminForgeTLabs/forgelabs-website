@@ -573,3 +573,14 @@ footer{border-top:1px solid var(--line-soft);padding:64px 0 38px;background:var(
 @media (max-width: 600px) {
   .ind-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Article / Blog prose styles ─────────────────────────────── */
+.prose{line-height:1.75;color:var(--ink)}
+.prose p{margin-top:0;margin-bottom:1.25rem}
+.prose h2{font-size:1.45rem;font-weight:700;margin-top:2.25rem;margin-bottom:.75rem;line-height:1.2;color:var(--ink)}
+.prose h3{font-size:1.15rem;font-weight:700;margin-top:1.75rem;margin-bottom:.5rem;color:var(--ink)}
+.prose ul,.prose ol{margin:0 0 1.25rem 1.5rem;padding:0}
+.prose li{margin-bottom:.4rem}
+.prose strong{font-weight:700}
+.prose a{color:var(--lime);text-decoration:underline}
+.prose a:hover{opacity:.8}
