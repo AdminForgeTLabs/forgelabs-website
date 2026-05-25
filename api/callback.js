@@ -26,26 +26,23 @@ export default async function handler(req, res) {
       throw new Error(data.error_description || 'No access_token in response');
     }
   } catch (err) {
-    const msg = JSON.stringify({ error: err.message });
+    const errMsg = JSON.stringify({ error: err.message });
     return res.setHeader('Content-Type', 'text/html').status(200).send(`<!DOCTYPE html>
 <html><body><script>
-window.opener.postMessage('authorization:github:error:${msg}', '*');
+window.opener.postMessage('authorization:github:error:${errMsg}', '*');
 window.close();
-</script><p>Authentication error. You may close this window.</p></body></html>`);
+<\/script><p>Authentication error. You may close this window.</p></body></html>`);
   }
 
   const content = JSON.stringify({ token, provider: 'github' });
-  const msg     = `authorization:github:success:${content}`;
 
   return res.setHeader('Content-Type', 'text/html').status(200).send(`<!DOCTYPE html>
 <html><body><script>
 (function() {
-  var msg = ${JSON.stringify(msg)};
+  var msg = 'authorization:github:success:' + ${JSON.stringify(content)};
   var opener = window.opener;
-  if (opener) {
-    opener.postMessage(msg, '*');
-  }
+  if (opener) { opener.postMessage(msg, '*'); }
   window.close();
 })();
-</script><p>Authenticating...</p></body></html>`);
+<\/script><p>Authenticating...</p></body></html>`);
 }
