@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact &mdash; Forge T Labs"
+  description="Get in touch with Forge T Labs to start a Microsoft Cloud, Dynamics 365 or AI project."
+  canonical=""
+  ogType="website"
+  
+>
+<main id="top">
+<section class="page-hero">
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; Contact</div>
+    <h1>Let's <em>forge</em> something together.</h1>
+    <p class="lede">Tell us about your project &mdash; a Dynamics 365 rollout, a Microsoft 365
+      migration, an Azure or AI build, or interest in our solutions. We'll come back within one
+      business day.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact-grid">
+
+    <!-- FORM -->
+    <div class="form-card reveal">
+      <form id="contactForm" novalidate>
+        <!-- honeypot: hidden from humans, catches bots. Do not remove. -->
+        <div style="position:absolute;left:-9999px" aria-hidden="true">
+          <label>Website<input type="text" id="website" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Full name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" required />
+            <div class="err">Please enter your name.</div>
+          </div>
+          <div class="field">
+            <label for="email">Work email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            <div class="err">Please enter a valid email address.</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="company">Company <span class="req">*</span></label>
+            <input type="text" id="company" name="company" placeholder="Company name" required />
+            <div class="err">Please enter your company.</div>
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span style="color:var(--ink-faint)">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 555 000 0000" />
+            <div class="err">Please enter a valid phone number.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="interest">What can we help with? <span class="req">*</span></label>
+          <select id="interest" name="interest" required>
+            <option value="" selected disabled>Select an area&hellip;</option>
+            <optgroup label="Our Products">
+              <option>BuildForge &mdash; Construction Project Management</option>
+              <option>SiteForge &mdash; Property Operations</option>
+              <option>SpecForge &mdash; Workplace Design &amp; Fit-Out</option>
+              <option>AssetForge &mdash; CRE Portfolio Tracking</option>
+            </optgroup>
+            <optgroup label="Services">
+              <option>Dynamics 365</option>
+              <option>Modern Work (Microsoft 365)</option>
+              <option>Azure &amp; AI</option>
+              <option>Managed Services &amp; support</option>
+            </optgroup>
+            <option>Something else</option>
+          </select>
+          <div class="err">Please choose an area.</div>
+        </div>
+        <div class="field">
+          <label for="message">Project details <span class="req">*</span></label>
+          <textarea id="message" name="message" placeholder="A few lines on what you're trying to achieve, timelines, and anything else useful."  required></textarea>
+          <div class="err">Please tell us a little about your project (at least 10 characters).</div>
+        </div>
+        <div class="form-foot">
+          <button type="submit" class="btn btn-primary">Send message &rarr;</button>
+          <span class="note">We reply within one business day. No spam, ever.</span>
+        </div>
+      </form>
+
+      <!-- success state -->
+      <div class="form-success" id="formSuccess">
+        <div class="ok"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#3fc878" stroke-width="2.4">
+          <path d="M5 13l4 4 10-11" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Message sent.</h3>
+        <p id="successText">Thanks &mdash; we've received your enquiry and will be in touch within one business day.</p>
+        <div class="hero-actions" style="justify-content:center;margin-top:24px">
+          <button class="btn btn-ghost" id="resetForm" type="button">Send another</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO SIDEBAR -->
+    <div class="reveal">
+      <div class="info-card">
+        <h4>Reach us directly</h4>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
+            <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div><div class="lbl">Email</div>
+            <a class="val" href="mailto:cssupport@forgetlabs.com">cssupport@forgetlabs.com</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
+            <path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></div>
+          <div><div class="lbl">Where we work</div>
+            <div class="val">Remote-first &mdash; we work with clients across all time zones</div></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#3fc878" stroke-width="1.7">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round"/></svg></div>
+          <div><div class="lbl">Hours</div>
+            <div class="val">Mon&ndash;Fri, 6:00am&ndash;6:00pm</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h4>What happens next</h4>
+        <p style="color:var(--ink-dim);font-size:.93rem">
+          We review your message, match you with the right engineer, and set up a short discovery
+          call. From there we scope the work and share a clear plan &mdash; no obligation.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+</BaseLayout>
