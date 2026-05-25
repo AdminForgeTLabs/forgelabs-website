@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://forgetlabs.com/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://forgetlabs.com/services.html</loc><priority>0.9</priority></url>
+  <url><loc>https://forgetlabs.com/industries.html</loc><priority>0.8</priority></url>
+  <url><loc>https://forgetlabs.com/solutions.html</loc><priority>0.9</priority></url>
+  <url><loc>https://forgetlabs.com/about.html</loc><priority>0.7</priority></url>
+  <url><loc>https://forgetlabs.com/contact.html</loc><priority>0.7</priority></url>
+  <url><loc>https://forgetlabs.com/dynamics-365.html</loc><priority>0.8</priority></url>
+  <url><loc>https://forgetlabs.com/modern-work.html</loc><priority>0.8</priority></url>
+  <url><loc>https://forgetlabs.com/azure-ai.html</loc><priority>0.8</priority></url>
+  <url><loc>https://forgetlabs.com/custom-solutions.html</loc><priority>0.8</priority></url>
+  <url><loc>https://forgetlabs.com/insights.html</loc><priority>0.7</priority></url>
+  <url><loc>https://forgetlabs.com/dynamics-365-for-construction.html</loc><priority>0.7</priority></url>
+  <url><loc>https://forgetlabs.com/resources.html</loc><priority>0.8</priority></url>
+</urlset>
