@@ -57,6 +57,6 @@ That is an architecture decision, not a shopping decision. It is the difference 
 
 If your firm is frustrated with its construction software, the instinct to shop is natural, but it is worth resisting for a week. Spend that week tracing where your real data lives. If it turns out fragmented across five systems, no new tool will save you, and knowing that before you sign a contract is worth a great deal.
 
-The contractors who get this right are not the ones with the most software. They are the ones whose data finally lives in one connected place — so the system can show them the truth, because the truth is finally all in one system.
+The contractors who get this right are not the ones with the most software. They are the ones whose data finally lives in one connected place, so the system can show them the truth, because the truth is finally all in one system.
 
 Forge T Labs helps commercial contractors build that connected foundation on Microsoft Dynamics 365 and the Power Platform. If you are weighing a software change, a short scoping conversation may save you from solving the wrong problem — get in touch.
