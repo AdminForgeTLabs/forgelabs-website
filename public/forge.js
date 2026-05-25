@@ -18,5 +18,4 @@
         'display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;' +
         'gap:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:14px 32px';
     });
-  }
-})();
+  }})();
