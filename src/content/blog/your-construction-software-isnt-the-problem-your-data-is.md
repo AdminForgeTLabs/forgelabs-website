@@ -12,7 +12,7 @@ ogImage: /blog-images/hero-construction-data.svg
 ---
 Every commercial contractor has had this conversation. A project goes sideways, the margin erodes, a change order slips, nobody saw it coming until it was too late, and the verdict is the same: our software isn't good enough. We need a better system.
 
-Sometimes that's true. Far more often, it isn't. And the firms that learn the difference are the ones that stop wasting six-figure sums replacing one tool with another that fails the same way.
+*Sometimes that's true. Far more often, it isn't. And the firms that learn the difference are the ones that stop wasting six-figure sums replacing one tool with another that fails the same way.*
 
 ## The comfortable explanation
 
