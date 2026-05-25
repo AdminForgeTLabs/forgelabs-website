@@ -23,44 +23,51 @@ export default async function handler(req, res) {
 
     if (!token) throw new Error(data.error_description || 'No access_token in response');
 
-    // Use JSON.stringify twice so the value is a safe JS string literal
-    // e.g. token = gho_abc → safeToken = "\"gho_abc\""
-    // Then: 'authorization:github:success:' + JSON.parse(safeToken)
-    // Actually — safest approach: put values in data attributes, read from DOM
-    const safeToken    = JSON.stringify(token);
-    const safeProvider = JSON.stringify('github');
+    const safeToken = JSON.stringify(token);
 
     return res.setHeader('Content-Type', 'text/html').status(200).send(`<!DOCTYPE html>
-<html><body>
-<script id="d" data-token=${safeToken} data-provider=${safeProvider}></script>
-<script>
+<html><body><script>
 (function() {
-  var el  = document.getElementById('d');
-  var msg = 'authorization:github:success:' + JSON.stringify({
-    token:    el.dataset.token,
-    provider: el.dataset.provider
+  var token = ${safeToken};
+  var provider = 'github';
+
+  function sendMsg(msg) {
+    if (window.opener) {
+      window.opener.postMessage(msg, '*');
+    }
+  }
+
+  // Step 1: send handshake
+  sendMsg('authorizing:' + provider);
+
+  // Step 2: wait for Decap to echo back, then send the token
+  window.addEventListener('message', function handler(e) {
+    if (e.data === 'authorizing:' + provider) {
+      window.removeEventListener('message', handler);
+      // Step 3: send the token
+      sendMsg('authorization:' + provider + ':success:' + JSON.stringify({ token: token, provider: provider }));
+      setTimeout(function() { window.close(); }, 500);
+    }
   });
-  if (window.opener) { window.opener.postMessage(msg, '*'); }
-  window.close();
+
+  // Fallback: if no echo in 5s, try sending anyway
+  setTimeout(function() {
+    sendMsg('authorization:' + provider + ':success:' + JSON.stringify({ token: token, provider: provider }));
+    setTimeout(function() { window.close(); }, 500);
+  }, 5000);
 })();
-<\/script>
-<p>Authenticating...</p>
-</body></html>`);
+<\/script><p>Authenticating...</p></body></html>`);
 
   } catch (err) {
     const safeErr = JSON.stringify(err.message);
     return res.setHeader('Content-Type', 'text/html').status(200).send(`<!DOCTYPE html>
-<html><body>
-<script id="d" data-error=${safeErr}></script>
-<script>
+<html><body><script>
 (function() {
-  var el  = document.getElementById('d');
-  var msg = 'authorization:github:error:' + JSON.stringify({ error: el.dataset.error });
-  if (window.opener) { window.opener.postMessage(msg, '*'); }
-  window.close();
+  if (window.opener) {
+    window.opener.postMessage('authorization:github:error:' + JSON.stringify({ error: ${safeErr} }), '*');
+  }
+  setTimeout(function() { window.close(); }, 500);
 })();
-<\/script>
-<p>Authentication error.</p>
-</body></html>`);
+<\/script><p>Authentication error.</p></body></html>`);
   }
 }
