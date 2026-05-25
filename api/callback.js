@@ -23,27 +23,44 @@ export default async function handler(req, res) {
 
     if (!token) throw new Error(data.error_description || 'No access_token in response');
 
-    // content is the raw JSON string Decap expects after the colon
-    const content = JSON.stringify({ token, provider: 'github' });
+    // Use JSON.stringify twice so the value is a safe JS string literal
+    // e.g. token = gho_abc → safeToken = "\"gho_abc\""
+    // Then: 'authorization:github:success:' + JSON.parse(safeToken)
+    // Actually — safest approach: put values in data attributes, read from DOM
+    const safeToken    = JSON.stringify(token);
+    const safeProvider = JSON.stringify('github');
 
     return res.setHeader('Content-Type', 'text/html').status(200).send(`<!DOCTYPE html>
-<html><body><script>
+<html><body>
+<script id="d" data-token=${safeToken} data-provider=${safeProvider}></script>
+<script>
 (function() {
-  var msg = "authorization:github:success:${content}";
-  if (window.opener) { window.opener.postMessage(msg, "*"); }
+  var el  = document.getElementById('d');
+  var msg = 'authorization:github:success:' + JSON.stringify({
+    token:    el.dataset.token,
+    provider: el.dataset.provider
+  });
+  if (window.opener) { window.opener.postMessage(msg, '*'); }
   window.close();
 })();
-<\/script><p>Authenticating...</p></body></html>`);
+<\/script>
+<p>Authenticating...</p>
+</body></html>`);
 
   } catch (err) {
-    const errContent = JSON.stringify({ error: err.message });
+    const safeErr = JSON.stringify(err.message);
     return res.setHeader('Content-Type', 'text/html').status(200).send(`<!DOCTYPE html>
-<html><body><script>
+<html><body>
+<script id="d" data-error=${safeErr}></script>
+<script>
 (function() {
-  var msg = "authorization:github:error:${errContent}";
-  if (window.opener) { window.opener.postMessage(msg, "*"); }
+  var el  = document.getElementById('d');
+  var msg = 'authorization:github:error:' + JSON.stringify({ error: el.dataset.error });
+  if (window.opener) { window.opener.postMessage(msg, '*'); }
   window.close();
 })();
-<\/script><p>Authentication error.</p></body></html>`);
+<\/script>
+<p>Authentication error.</p>
+</body></html>`);
   }
 }
