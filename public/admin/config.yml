@@ -1,0 +1,41 @@
+# Decap CMS config for Forge T Labs
+# Docs: https://decapcms.org/docs/configuration-options/
+
+backend:
+  name: github
+  repo: AdminForgeTLabs/forgelabs-website
+  branch: main
+  base_url: https://forgetlabs.com
+  auth_endpoint: /api/auth
+
+# Where uploaded media files are stored
+media_folder: public/blog-images
+public_folder: /blog-images
+
+# Disable the editorial workflow for single-author use
+# (set to true later if you want draft -> review -> publish PRs)
+publish_mode: simple
+
+collections:
+  - name: blog
+    label: Blog Posts
+    folder: src/content/blog
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Title", name: title, widget: string, required: true }
+      - { label: "Description", name: description, widget: text, required: true,
+          hint: "Used for the SEO meta tag and the card teaser on /insights." }
+      - { label: "Publish Date", name: publishDate, widget: datetime,
+          date_format: "YYYY-MM-DD", time_format: false, required: true }
+      - { label: "Author", name: author, widget: string, default: "Forge T Labs",
+          required: true }
+      - { label: "Tags", name: tags, widget: list, required: false,
+          hint: "Comma-separated tags, e.g. Dynamics 365, Construction" }
+      - { label: "OG Image (optional)", name: ogImage, widget: image,
+          required: false,
+          hint: "Upload a cover image for social sharing (optional)." }
+      - { label: "Body", name: body, widget: markdown, required: true }
