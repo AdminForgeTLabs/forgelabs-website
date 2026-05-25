@@ -25,11 +25,11 @@ Software does not create visibility. It displays it. A project management platfo
 
 When a contractor cannot see where a project truly stands, the cause is almost never that the screen is laid out wrong. It is that the underlying information is fragmented across places that do not talk to each other:
 
-- The budget lives in a spreadsheet that one estimator updates.
-- Committed costs live in the accounting system.
-- Change orders live in an email thread and a folder of PDFs.
-- The schedule lives in separate scheduling software.
-- The field's actual progress lives in someone's head until the weekly meeting.
+* The budget lives in a spreadsheet that one estimator updates.
+* Committed costs live in the accounting system.
+* Change orders live in an email thread and a folder of PDFs.
+* The schedule lives in separate scheduling software.
+* The field's actual progress lives in someone's head until the weekly meeting.
 
 No software product, however good, can give you a true real-time picture of margin when the five inputs to that picture are sitting in five disconnected systems. The tool is not failing. It is faithfully reflecting a disconnected reality.
 
@@ -41,7 +41,7 @@ Six-figure software migrations fail this way constantly. Not because the softwar
 
 ## The question worth asking instead
 
-Before any firm evaluates a single vendor, there is a more useful exercise. Ask: for the number that matters most — projected margin at completion, what are its inputs, and where does each one actually live?
+Before any firm evaluates a single vendor, there is a more useful exercise. Ask: for the number that matters most projected margin at completion, what are its inputs, and where does each one actually live?
 
 Trace it honestly. The original budget. Approved changes. Committed costs. Actual costs to date. Cost to complete. For each, name the system of record and name how current it is. Most contractors who do this find that the number they manage the business by is assembled, by hand, from four or five sources, each updated on a different cadence, by a different person.
 
@@ -59,4 +59,6 @@ If your firm is frustrated with its construction software, the instinct to shop 
 
 The contractors who get this right are not the ones with the most software. They are the ones whose data finally lives in one connected place, so the system can show them the truth, because the truth is finally all in one system.
 
-Forge T Labs helps commercial contractors build that connected foundation on Microsoft Dynamics 365 and the Power Platform. If you are weighing a software change, a short scoping conversation may save you from solving the wrong problem — get in touch.
+Forge T Labs helps commercial contractors build that connected foundation on Microsoft Dynamics 365 and the Power Platform. If you are weighing a software change, a short scoping conversation may save you from solving the wrong problem. 
+
+**[Get in touch](https://forgetlabs.com/contact)**
